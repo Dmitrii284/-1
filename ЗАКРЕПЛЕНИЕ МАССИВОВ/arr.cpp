@@ -69,7 +69,7 @@ int main() {
 	}
 	//Outputting the result of pairwise addition
 	std::cout << "Outputting the result of pairwise addition:\n";
-	
+
 	for (int i = 0; i < 1; i++) {
 		for (int i = 0; i < size2; i++) {
 			for (int j = 0; j < 1; j++) {
@@ -81,7 +81,6 @@ int main() {
 			}
 		}
 	}
-
 	/*Task 3
 		The user enters a six - digit number.If
 		the number is entered incorrectly, the program ends its
@@ -91,9 +90,18 @@ int main() {
 	int n;
 	std::cout << "Enters a six - digit number -> ";
 	std::cin >> n;
-   
+	if (n > 19999 && n < 1000000)
+		for (int i = 0; i < 6; i++) {
+			arr[0] = n / 100000;
+			arr[1] = n / 10000 % 10;
+			arr[2] = n / 1000 % 10;
+			arr[3] = n / 100 % 10;
+			arr[4] = n / 10 % 10;
+			arr[5] = n % 10;
 
-
-
+			std::cout << arr[i] << ' ';
+		}	
+	else
+		std::cout << "Incorrect number entered!";
 	return 0;
 }
